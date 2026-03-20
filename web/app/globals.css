@@ -1,0 +1,358 @@
+@import "tailwindcss";
+
+/* ============================================
+   Font Preview (폰트 미리보기용)
+   ============================================ */
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/Pretendard-Regular.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("/fonts/Paperlogy-7Bold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "BlackHanSans";
+  src: url("/fonts/BlackHanSans-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cafe24Ssurround";
+  src: url("/fonts/Cafe24Ssurround-v2.0.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "GodoB";
+  src: url("/fonts/GodoB.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "AritaBuriKR";
+  src: url("/fonts/AritaBuriKR-SemiBold.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* ============================================
+   BAROGA Neobrutalism Design System
+   ============================================ */
+
+@theme {
+  /* --- Colors --- */
+  --color-background: #FFF9EB;
+  --color-foreground: #1C1C1C;
+  --color-primary: #03C75A;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #60A5FA;
+  --color-secondary-foreground: #FFFFFF;
+  --color-success: #4ADE80;
+  --color-success-foreground: #1C1C1C;
+  --color-warning: #FBBF24;
+  --color-warning-foreground: #1C1C1C;
+  --color-danger: #FB7185;
+  --color-danger-foreground: #FFFFFF;
+  --color-content1: #FFFFFF;
+  --color-content2: #FFF3C8;
+  --color-content3: #DCFCE7;
+  --color-content4: #E0E7FF;
+  --color-surface: #FFF6D6;
+  --color-subtext: #6B6B6B;
+  --color-error: #EF4444;
+
+  /* --- Font --- */
+  --font-sans: var(--font-inter), var(--font-noto-sans-kr), system-ui, -apple-system, sans-serif;
+
+  /* --- Animation --- */
+  --animate-fade-in: fade-in 0.3s ease-out;
+  --animate-slide-up: slide-up 0.3s ease-out;
+  --animate-scale-in: scale-in 0.2s ease-out;
+  --animate-card-enter: card-enter 0.3s ease both;
+}
+
+/* ============================================
+   CSS Custom Properties (theme-dependent)
+   ============================================ */
+
+:root {
+  --shadow-neo-sm: 2px 2px 0px #1C1C1C;
+  --shadow-neo-md: 4px 4px 0px #1C1C1C;
+  --shadow-neo-lg: 6px 6px 0px #1C1C1C;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* ============================================
+   Neobrutalist Component Classes
+   ============================================ */
+
+/* --- Neo Card --- */
+.neo-card {
+  background: var(--color-content1);
+  border: 3px solid var(--color-foreground);
+  border-radius: 12px;
+  box-shadow: var(--shadow-neo-md);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.neo-card-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-neo-lg);
+}
+
+.neo-card-hover:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--color-foreground);
+}
+
+/* --- Neo Button --- */
+.neo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 3px solid var(--color-foreground);
+  box-shadow: var(--shadow-neo-sm);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.neo-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-neo-md);
+}
+
+.neo-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.neo-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--shadow-neo-sm);
+}
+
+.neo-btn:disabled:hover {
+  transform: none;
+  box-shadow: var(--shadow-neo-sm);
+}
+
+.neo-btn-primary {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+.neo-btn-secondary {
+  background: var(--color-content1);
+  color: var(--color-foreground);
+}
+
+.neo-btn-danger {
+  background: var(--color-danger);
+  color: var(--color-danger-foreground);
+}
+
+.neo-btn-ghost {
+  background: transparent;
+  color: var(--color-foreground);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.neo-btn-ghost:hover {
+  background: var(--color-content2);
+  border-color: var(--color-foreground);
+  box-shadow: var(--shadow-neo-sm);
+}
+
+/* --- Memphis Input --- */
+.memphis-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--color-content1);
+  border: 3px solid var(--color-foreground);
+  border-radius: 8px;
+  color: var(--color-foreground);
+  font-weight: 500;
+  font-size: 14px;
+  transition: box-shadow 0.15s ease;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.memphis-input::placeholder {
+  color: rgba(28, 28, 28, 0.35);
+  font-weight: 400;
+}
+
+.memphis-input:focus {
+  outline: none;
+  box-shadow: var(--shadow-neo-sm);
+}
+
+.memphis-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--color-content1);
+  border: 3px solid var(--color-foreground);
+  border-radius: 8px;
+  color: var(--color-foreground);
+  font-weight: 500;
+  font-size: 14px;
+  resize: vertical;
+  transition: box-shadow 0.15s ease;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.memphis-textarea::placeholder {
+  color: rgba(28, 28, 28, 0.35);
+  font-weight: 400;
+}
+
+.memphis-textarea:focus {
+  outline: none;
+  box-shadow: var(--shadow-neo-sm);
+}
+
+/* --- Memphis Select --- */
+.memphis-select {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--color-content1);
+  border: 3px solid var(--color-foreground);
+  border-radius: 8px;
+  color: var(--color-foreground);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%231C1C1C' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.memphis-select:focus {
+  outline: none;
+  box-shadow: var(--shadow-neo-sm);
+}
+
+/* --- Memphis Badge --- */
+.memphis-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--color-foreground);
+  border-radius: 6px;
+}
+
+/* --- Neo Tag --- */
+.neo-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--color-content3);
+  border: 2px solid var(--color-foreground);
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.neo-tag:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 1px 1px 0px var(--color-foreground);
+}
+
+/* ============================================
+   Keyframe Animations
+   ============================================ */
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes card-enter {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   Accessibility & Polish
+   ============================================ */
+
+:focus-visible {
+  outline: 3px solid var(--color-foreground);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-foreground);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* JSON editor textarea */
+.json-editor {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Monaco, monospace;
+  tab-size: 2;
+}
+
+/* Card enter with stagger */
+.card-enter {
+  animation: card-enter 0.3s ease both;
+  animation-delay: calc(var(--card-index, 0) * 0.05s);
+}
+
+/* Transition for interactive elements */
+button, a, select {
+  transition: all 0.15s ease;
+}

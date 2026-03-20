@@ -1,0 +1,80 @@
+{
+  "topic": "Claude Code 완전 정복",
+  "title": "Claude Code로 개발 속도 10배 올리는 법 🚀",
+  "scenes": [
+    {
+      "id": "scene-1",
+      "type": "intro",
+      "heading": "Claude Code",
+      "narration": "터미널 하나로 개발이 완전히 달라집니다. 진짜로요.",
+      "visual": {
+        "type": "keyword-highlight",
+        "data": {
+          "text": "Claude Code 터미널 하나로 개발 자동화 완성",
+          "keywords": ["Claude Code", "자동화"]
+        }
+      }
+    },
+    {
+      "id": "scene-2",
+      "type": "tip",
+      "heading": "설치 1분",
+      "narration": "npm 한 줄로 설치, 바로 claude 명령어로 실행",
+      "visual": {
+        "type": "code-block",
+        "data": {
+          "language": "bash",
+          "code": "npm install -g @anthropic-ai/claude-code\n\nclaude"
+        }
+      }
+    },
+    {
+      "id": "scene-3",
+      "type": "tip",
+      "heading": "할 수 있는 것",
+      "narration": "코드 작성, 디버깅, 파일 수정, 테스트까지 전부 자동",
+      "visual": {
+        "type": "checklist",
+        "data": {
+          "items": [
+            { "text": "코드 자동 작성", "checked": true },
+            { "text": "버그 디버깅", "checked": true },
+            { "text": "파일 리팩토링", "checked": true },
+            { "text": "테스트 생성", "checked": true }
+          ]
+        }
+      }
+    },
+    {
+      "id": "scene-4",
+      "type": "tip",
+      "heading": "핵심 명령어",
+      "narration": "슬래시 명령어로 원하는 모드를 바로 전환할 수 있어요",
+      "visual": {
+        "type": "step-flow",
+        "data": {
+          "steps": [
+            { "icon": "💬", "label": "/chat - 대화 모드" },
+            { "icon": "🔧", "label": "/edit - 파일 수정" },
+            { "icon": "🧪", "label": "/test - 테스트 실행" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "scene-5",
+      "type": "outro",
+      "heading": "aitoolbee",
+      "narration": "팔로우하면 이런 AI 툴 팁을 매일 받을 수 있어요",
+      "visual": {
+        "type": "tip-card",
+        "data": {
+          "number": 1,
+          "title": "팔로우 하나로 AI 고수 되기",
+          "description": "매일 실무에 쓰는 AI 툴 정보",
+          "emoji": "🔔"
+        }
+      }
+    }
+  ]
+}
