@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: aitoolbee-shorts
+    runtime: docker
+    repo: https://github.com/bitcory/tbshort.git
+    branch: main
+    plan: starter
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: HF_TOKEN
+        sync: false

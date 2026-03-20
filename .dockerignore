@@ -1,0 +1,11 @@
+node_modules
+web/node_modules
+web/.next
+.venv
+output
+.git
+.claude
+fonts
+public/audio
+public/images
+*.mp4
